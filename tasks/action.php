@@ -9,11 +9,18 @@ if (
 require_once '../include/db.php';
 
 if (isset($_POST['action']) && htmlspecialchars($_POST['action']) == 'view') {
+    if (isset($_POST['status']) && in_array(htmlspecialchars($_POST['status']), ['O','C'])) {
+        $status = htmlspecialchars($_POST['status']);
+    }
+    else {
+        $status = 'A';
+    }
 
     // Get all records from database
     $data = $db->query("SELECT t.*,d.name AS department FROM task t
-                               INNER JOIN department d ON (t.department_id=d.id)
-                               ORDER BY id DESC")->fetchAll();
+                               INNER JOIN department d ON (t.department_id=d.id) " .
+                               ($status!='A' ? "AND status ='$status'" : "") .
+                               " ORDER BY id DESC")->fetchAll();
 
     if (count($data)) {
         $output = '<table class="table table-stripped table-sm table-bordered table-hover">

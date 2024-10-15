@@ -9,99 +9,12 @@ $form_plural = 'Users';
         <div class="col-lg-6">
             <h4 class="mt-2 text-primary"><?= $form_plural ?></h4>
         </div>
-        <div class="col-lg-6">
-            <button type="button" class="btn btn-primary m-1 float-right" data-toggle="modal" data-target="#addModal"><i
-                    class="fas fa-user-plus fa-lg"></i>&nbsp;&nbsp;Add
-                New<?= $form ?></button>
-        </div>
+
     </div>
     <hr class="my-1">
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive" id="showUser">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Add New User Modal -->
-<div class="modal fade" id="addModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Add New <?= $form ?></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body px-4">
-                <form action="" method="POST" id="form-data">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="description" class="form-control" placeholder="Description" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="department_id" aria-label="Department selection" required>
-                            <option selected>Select the Department</option>
-                            <option value="1">Administration</option>
-                            <option value="2">I.T.</option>
-                            <option value="3">Sales</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="insert" id="insert" value="Add" class="btn btn-danger btn-block">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Edit Modal -->
-<div class="modal fade" id="editModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Edit <?= $form ?></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body px-4">
-                <form action="" method="POST" id="edit-form-data">
-                    <input type="hidden" name="id" id="id">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="description" id="description" class="form-control" placeholder="Description"
-                            required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="department_id" id="department_id"
-                            aria-label="Department selection" required>
-                            <option selected>Select the Department</option>
-                            <option value="1">Administration</option>
-                            <option value="2">I.T.</option>
-                            <option value="3">Sales</option>
-                        </select>
-                    </div>
-
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="C" id="status" name="status">
-                        <label class="form-check-label" for="status">Closed</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" name="update" id="update" value="Update Record"
-                            class="btn btn-primary btn-block">
-                    </div>
-                </form>
             </div>
         </div>
     </div>

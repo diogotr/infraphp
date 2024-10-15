@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando estrutura para tabela infra2.department
 CREATE TABLE IF NOT EXISTS `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -20,7 +19,6 @@ INSERT INTO `department` (`id`, `name`) VALUES
 	(2, 'I.T.'),
 	(3, 'Sales');
 
--- Copiando estrutura para tabela infra2.login_history
 CREATE TABLE IF NOT EXISTS `login_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) DEFAULT NULL,
@@ -41,8 +39,6 @@ CREATE TABLE IF NOT EXISTS `task` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-
--- Copiando estrutura para tabela infra2.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,

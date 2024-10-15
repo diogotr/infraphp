@@ -26,8 +26,8 @@ if (isset($_POST['action']) && htmlspecialchars($_POST['action'])  == 'view') {
                         <td>' . $row['id'] . '</td>
                         <td>' . $row['firstname'] . '</td>
                         <td>' . $row['lastname'] . '</td>
-                        <td>' . $row['email'] . '</td>
                         <td>' . $row['phone'] . '</td>
+                        <td>' . $row['email'] . '</td>                        
                         <td>
                             <a href="#" title="Edit" class="text-primary editBtn" data-toggle="modal" data-target="#editModal" id="' . $row['id'] . '"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;
                             <a href="#" title="Delete" class="text-danger delBtn" id="' . $row['id'] . '"><i class="fas fa-trash-alt fa-lg"></i></a>&nbsp;&nbsp; 

@@ -6,12 +6,27 @@ $form_plural = 'Tasks';
 
 <div class="container bg-light rounded">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <h4 class="mt-2 text-primary"><?= $form_plural ?></h4>
         </div>
-        <div class="col-lg-6">
-            <button type="button" class="btn btn-primary m-1 float-right" data-toggle="modal" data-target="#addModal">Add
+        <div class="col-lg-8">
+            <button type="button" class="btn btn-primary m-1 float-right" data-toggle="modal"
+                data-target="#addModal">Add
                 New<?= $form ?></button>
+        </div>
+    </div>
+    <div class="row mx-2">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" id="" value="A">
+            <label class="form-check-label" for="status">All</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" value="O" checked>
+            <label class="form-check-label" for="status">Open</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="status" value="C">
+            <label class="form-check-label" for="status">Closed</label>
         </div>
     </div>
     <hr class="my-1">
@@ -111,14 +126,15 @@ $form_plural = 'Tasks';
 <script type="text/javascript">
     $(document).ready(function () {
 
-
         showAllUsers();
 
         function showAllUsers() {
+            var selectedValue = $("input[type='radio'][name=status]:checked").val();
+
             $.ajax({
                 url: "action.php",
                 type: "POST",
-                data: { action: "view" },
+                data: { action: "view", status: selectedValue },
                 success: function (response) {
                     //console.log(response)
                     $("#showUser").html(response);
@@ -228,6 +244,11 @@ $form_plural = 'Tasks';
                     });
                 }
             });
+        });
+
+
+        $('input[name="status"]').change(function () {
+            showAllUsers();
         });
 
     });

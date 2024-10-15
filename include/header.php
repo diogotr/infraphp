@@ -50,7 +50,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
     
   <nav class="navbar navbar-expand-md mb-3 navbar-dark" style="background-color:#000000;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../main/home.php">Infrasoft Systems</a>
+      <a class="navbar-brand" href="../main/index.php">Infrasoft Systems</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
