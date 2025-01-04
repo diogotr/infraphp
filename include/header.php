@@ -70,7 +70,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
             <a class="nav-link" href="../users">Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Integration</a>
+            <a class="nav-link" href="../integration">Integration</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../main/logout.php">Logout</a>

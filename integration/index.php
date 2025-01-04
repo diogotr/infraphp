@@ -1,20 +1,21 @@
 <?php
 include('../include/header.php');
-$form = 'Index';
-$form_plural = 'Index';
-?>
+require_once('../include/functions.php');
+$usd_rate = getCotacao('USD-BRL');
+$btc_rate = getCotacao('BTC-USD');
 
+?>
 <div class="container">
   <div class="row">
     <div class="col">
       <div class="card-deck">
         <div class="card">
-          <div class="card-header">ERP and CRM</div>
+          <div class="card-header">API - Exchange Rates</div>
           <div class="card-body">
-            <h5 class="card-title">ERP</h5>
-            <p class="card-text">ERP for small and medium business.</p>
-            <h5 class="card-title">CRM</h5>
-            <p class="card-text">CRM integrating your data with your other softwares.</p>
+            <h5 class="card-title">USD-BRL</h5>
+            <p class="card-text">$ 1.000 <?= $usd_rate['code'] ?> = R$ <?= number_format($usd_rate['price'], 3, '.', ',') ?> BRL</p>
+            <h5 class="card-title">BTC-USD</h5>
+            <p class="card-text">$ 1.000 <?= $btc_rate['code'] ?> = $ <?= number_format($btc_rate['price'], 3, '.', ',') ?> USD</p>
           </div>
         </div>
         <div class="card">
@@ -40,7 +41,6 @@ $form_plural = 'Index';
 
   </div>
 </div>
-
 
 <?php
 include('../include/footer.php');
